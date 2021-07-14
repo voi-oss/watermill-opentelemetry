@@ -17,7 +17,7 @@ import (
     "github.com/ThreeDotsLabs/watermill-googlecloud/pkg/googlecloud"
     "github.com/ThreeDotsLabs/watermill/message"
     "github.com/garsue/watermillzap"
-    wot "github.com/voi-oss/watermill-opentelemetry"
+    wotel "github.com/voi-oss/watermill-opentelemetry/pkg/opentelemetry"
     "go.uber.org/zap"
 )
 
@@ -37,10 +37,10 @@ func NewPublisher(logger *zap.Logger, config PublisherConfig) (message.Publisher
 	}
 
 	if config.Name == "" {
-		return wot.NewPublisherDecorator(publisher), nil
+		return wotel.NewPublisherDecorator(publisher), nil
 	}
 
-	return wot.NewNamedPublisherDecorator(config.Name, publisher), nil
+	return wotel.NewNamedPublisherDecorator(config.Name, publisher), nil
 }
 ```
 
@@ -54,7 +54,7 @@ package example
 import (
 	"github.com/ThreeDotsLabs/watermill"
 	"github.com/ThreeDotsLabs/watermill/message"
-    wotel "github.com/voi-oss/watermill-opentelemetry"
+    wotel "github.com/voi-oss/watermill-opentelemetry/pkg/opentelemetry"
 )
 
 func InitTracedRouter() (*message.Router, error) {
@@ -77,7 +77,7 @@ package example
 import (
 	"github.com/ThreeDotsLabs/watermill"
 	"github.com/ThreeDotsLabs/watermill/message"
-    wotel "github.com/voi-oss/watermill-opentelemetry"
+    wotel "github.com/voi-oss/watermill-opentelemetry/pkg/opentelemetry"
 )
 
 func InitRouter() (*message.Router, error) {
