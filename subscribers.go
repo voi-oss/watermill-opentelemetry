@@ -9,9 +9,15 @@ import (
 
 const subscriberTracerName = "watermill/subscriber"
 
-// HandlerMiddleware decorates a watermill HandlerFunc to add tracing when a
-// message is received.
-func HandlerMiddleware(h message.HandlerFunc, options ...Option) message.HandlerFunc {
+// Trace defines a middleware that will add tracing.
+func Trace(options ...Option) message.HandlerMiddleware {
+	return func(h message.HandlerFunc) message.HandlerFunc {
+		return TraceHandler(h, options...)
+	}
+}
+
+// TraceHandler decorates a watermill HandlerFunc to add tracing when a message is received.
+func TraceHandler(h message.HandlerFunc, options ...Option) message.HandlerFunc {
 	tracer := otel.Tracer(subscriberTracerName)
 	config := &config{}
 
@@ -45,10 +51,9 @@ func HandlerMiddleware(h message.HandlerFunc, options ...Option) message.Handler
 	}
 }
 
-// NoPublishHandlerFuncMiddleware decorates a watermill NoPublishHandlerFunc to
-// add tracing when a message is received.
-func NoPublishHandlerFuncMiddleware(h message.NoPublishHandlerFunc, options ...Option) message.NoPublishHandlerFunc {
-	decoratedHandler := HandlerMiddleware(func(msg *message.Message) ([]*message.Message, error) {
+// TraceNoPublishHandler decorates a watermill NoPublishHandlerFunc to add tracing when a message is received.
+func TraceNoPublishHandler(h message.NoPublishHandlerFunc, options ...Option) message.NoPublishHandlerFunc {
+	decoratedHandler := TraceHandler(func(msg *message.Message) ([]*message.Message, error) {
 		return nil, h(msg)
 	}, options...)
 
