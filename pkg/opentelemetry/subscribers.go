@@ -1,4 +1,4 @@
-package middleware
+package opentelemetry
 
 import (
 	"github.com/ThreeDotsLabs/watermill/message"
