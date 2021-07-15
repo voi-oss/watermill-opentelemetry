@@ -1,6 +1,6 @@
 # Watermill OpenTelemetry integration
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/voi-oss/watermill-opentelemetry?style=flat-square)](https://goreportcard.com/report/github.com/voi-oss/watermill-opentelemetry)
+[![Go Report Card](https://goreportcard.com/badge/github.com/voi-oss/watermill-opentelemetry)](https://goreportcard.com/report/github.com/voi-oss/watermill-opentelemetry)
 [![GoDoc](http://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square)](https://pkg.go.dev/github.com/voi-oss/watermill-opentelemetry)
 
 Bringing distributed tracing support to [Watermill](https://watermill.io/) with [OpenTelemetry](https://opentelemetry.io/). 
