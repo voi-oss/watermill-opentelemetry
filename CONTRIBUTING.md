@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-svc project is [Apache licensed](LICENSE.md) and accepts contributions via
+watermill-opentelemetry project is [Apache licensed](LICENSE.md) and accepts contributions via
 GitHub pull requests. This document outlines some of the conventions on
 development workflow, commit message formatting, contact points, and other
 resources to make it easier to get your contribution accepted.
@@ -25,7 +25,7 @@ official `watermill-opentelemetry` project.
 
 ```
 git clone git@github.com:your_github_username/watermill-opentelemetry.git
-cd svc
+cd watermill-opentelemetry
 git remote add upstream https://github.com/voi-oss/watermill-opentelemetry.git
 git fetch upstream
 ```
@@ -33,7 +33,7 @@ git fetch upstream
 Install dependencies:
 
 ```
-make vendor
+make deps
 ```
 
 Make sure the tests and linters pass:
@@ -75,6 +75,6 @@ We're much more likely to approve your changes if you:
 * Write a [good commit message][commit-message].
 * Maintain backward compatibility.
 
-[fork]: https://github.com/uber-go/zap/fork
-[open-issue]: https://github.com/voi-oss/svc/issues/new
+[fork]: https://github.com/voi-pss/watermill-opentelemetry/fork
+[open-issue]: https://github.com/voi-oss/watermill-opentelemetry/issues/new
 [commit-message]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
