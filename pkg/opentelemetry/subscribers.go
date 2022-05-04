@@ -3,7 +3,7 @@ package opentelemetry
 import (
 	"github.com/ThreeDotsLabs/watermill/message"
 	"go.opentelemetry.io/otel"
-	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
+	semconv "go.opentelemetry.io/otel/semconv/v1.10.0"
 	"go.opentelemetry.io/otel/trace"
 )
 
