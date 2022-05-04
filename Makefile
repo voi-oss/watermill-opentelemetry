@@ -1,10 +1,11 @@
-PHONY: lint
+.PHONY: lint
 lint:
 	golangci-lint run --config .golangci.yaml
 
 .PHONY: deps
-deps: vendor
+deps:
+	go get ./...
 
-.PHONY: vendor
-vendor:
-	go mod vendor
+.PHONY: test
+test:
+	go test -v ./...
