@@ -3,9 +3,9 @@ module github.com/voi-oss/watermill-opentelemetry
 go 1.18
 
 require (
-	github.com/ThreeDotsLabs/watermill v1.2.0-rc.10
-	go.opentelemetry.io/otel v1.7.0
-	go.opentelemetry.io/otel/trace v1.7.0
+	github.com/ThreeDotsLabs/watermill v1.2.0-rc.11
+	go.opentelemetry.io/otel v1.9.0
+	go.opentelemetry.io/otel/trace v1.9.0
 )
 
 require (
